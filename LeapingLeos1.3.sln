@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4C6B27C3-C3FA-24F2-175F-931849F9BDAF}") = "LeapingLeos1.3", "Assembly-CSharp.csproj", "{0EF5400C-9A01-D496-D843-0403E0DD72EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EF5400C-9A01-D496-D843-0403E0DD72EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF5400C-9A01-D496-D843-0403E0DD72EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF5400C-9A01-D496-D843-0403E0DD72EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF5400C-9A01-D496-D843-0403E0DD72EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

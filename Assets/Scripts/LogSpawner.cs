@@ -9,6 +9,7 @@ public class LogSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Object.Destroy (this);
 		InvokeRepeating ("SpawnLog", spawnTime, spawnTime);
 	}
 	

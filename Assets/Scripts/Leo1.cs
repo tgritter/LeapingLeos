@@ -3,13 +3,15 @@ using System.Collections;
 
 public class Leo1 : MonoBehaviour {
 
-	Vector3 pos = new Vector3 (0, 0, 0);
-	Vector3 pos2 = new Vector3 (20, 0, 0);
+	Vector3 pos = new Vector3 (0, 1.5F, 0);
+	Vector3 pos2 = new Vector3 (20, 1.5F, 0);
+	Vector3 jumpForce = new Vector3 (0, 6000, 0);
 	float speed = 12F;
 	float spinTime = 20F;
 	float originX = 10;
 	float originZ = 0F;
 	float radius = 10F;
+	public Rigidbody Leo1RB;
 
 
 
@@ -21,6 +23,9 @@ public class Leo1 : MonoBehaviour {
 	void Start () {
 		this.transform.position = pos;
 		Leo2.transform.position = pos2;
+		Leo1RB = GetComponent<Rigidbody>();
+
+
 	}
 
 	void circle() {
@@ -31,23 +36,25 @@ public class Leo1 : MonoBehaviour {
 		pos2.x = -radius * Mathf.Cos (2 * Mathf.PI * spinTime / 1000) + originX;
 		pos2.z = -radius * Mathf.Sin (2 * Mathf.PI * spinTime / 1000) + originZ;
 
+		pos.y = this.transform.position.y;
+		pos2.y = Leo2.transform.position.y;
 
 		this.transform.position = pos;
 		Leo2.transform.position = pos2;
 
 	}
+		
 
 
 	// Update is called once per frame
 	void Update () {
+		
 
 		if(Input.GetKey("right")){
-			circle ();
 			spinTime += speed;
 		}
 
 		if (Input.GetKey ("left")) {
-			circle ();
 			spinTime -= speed;
 		}
 		if (Input.GetKey ("d")) {
@@ -86,7 +93,27 @@ public class Leo1 : MonoBehaviour {
 			radius -= 0.1F * speed;
 		}
 
+		if (Input.GetKey ("space")) {
+			print("spacebar");
+			if (pos.y <= 1.55) {
+				Leo1RB.AddForce (jumpForce);
+			}
+
+		}
+
+		circle ();
 
 
+
+	}
+
+	void FixedUpdated() {
+		if (Input.GetKey ("space")) {
+			print("spacebar2");
+			if (pos.y == 1.5) {
+				Leo1RB.AddForce (jumpForce);
+			}
+
+		}
 	}
 }

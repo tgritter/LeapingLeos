@@ -1,69 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public class Leo2 : MonoBehaviour {
 
-	Vector3 pos = new Vector3 (0, 0, 0);
+	public Rigidbody Leo2RB;
+	Vector3 pos = new Vector3 (0,0,0);
 	float speed = 12F;
 	float spinTime = 20F;
 	float originX = 10F;
 	float originZ = 0F;
+	Vector3 jumpForce = new Vector3 (0, 6000, 0);
 
 
 	// Use this for initialization
 	void Start () {
-		this.transform.position = pos;
+		Leo2RB = GetComponent<Rigidbody>(); 
 	}
-
-	void circle() {
-
-		pos.x = -10 * Mathf.Cos (2 * Mathf.PI * spinTime / 1000) + originX;
-		pos.z = -10 * Mathf.Sin (2 * Mathf.PI * spinTime / 1000) + originZ;
-
-		this.transform.position = pos;
-		print (pos.x);
-		print (pos.y);
-
-
-	}
-
-
+		
 	// Update is called once per frame
 	void Update () {
+		pos = this.transform.position;
 
-		if(Input.GetKey("right")){
-			circle ();
-			spinTime += speed;
-		}
-
-		if (Input.GetKey ("left")) {
-			circle ();
-			spinTime -= speed;
-		}
-		if (Input.GetKey ("d")) {
-			pos.x += 0.1F * speed;
-			originX += 0.1F*speed;
-			this.transform.position = pos;
+		if (Input.GetKey ("space")) {
+			print("spacebar");
+			if (pos.y <= 1.55) {
+				Leo2RB.AddForce (jumpForce);
+			}
 
 		}
-		if (Input.GetKey ("a")) {
-			pos.x -= 0.1F * speed;
-			originX -= 0.1F* speed;
-			this.transform.position = pos;
-		}
-		if (Input.GetKey ("w")) {
-			pos.z += 0.1F * speed;
-			originZ += 0.1F* speed;
-			this.transform.position = pos;
-		}
-		if (Input.GetKey ("s")) {
-			pos.z -= 0.1F * speed;
-			originZ -= 0.1F* speed;
-			this.transform.position = pos;
-		}
-
-
-
 
 	}
 }

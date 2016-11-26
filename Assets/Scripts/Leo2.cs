@@ -21,6 +21,7 @@ public class Leo2 : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
+		/*
 		pos = this.transform.position;
 
 		if (Input.GetKey ("space")) {
@@ -30,6 +31,7 @@ public class Leo2 : MonoBehaviour {
 			}
 
 		}
+		*/
 
 	}
 }

@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Leo1.cs" />
      <Compile Include="Assets\Scripts\Leo2.cs" />
+     <Compile Include="Assets\Scripts\LogController.cs" />
      <Compile Include="Assets\Scripts\LogScript.cs" />
      <Compile Include="Assets\Scripts\LogSpawner.cs" />
  <Reference Include="UnityEngine.UI">
